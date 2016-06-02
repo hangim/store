@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    {{template "HEAD"}}
+    <title>Book Store</title>
+</head>
+
+<body>
+    {{template "NAV"}}
+
+    <div class="container-fluid">
+        <div class="row booklist">
+            {{range $book := .books}}
+            <div class="col-xs-12 col-sm-6 col-md-4 book">
+                <div class="prodimg">
+                    <img src="{{$book.Image}}" />
+                </div>
+                <p><a href="/book/{{$book.ID}}" class="title_link">{{$book.Title}}</a></p>
+                {{range $i, $author := $book.Authors}}
+                <p class="author">{{$author.Name}}</p>
+                {{end}}
+                <p class="price">￥{{printf "%.2f" $book.Price}}</p>
+            </div>
+            {{end}}
+        </div>
+    </div>
+
+    {{template "FOOTER"}}
+</body>
+</html>

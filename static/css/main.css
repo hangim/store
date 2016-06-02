@@ -1,0 +1,58 @@
+div.booklist div.book {
+    position: relative;
+    margin: 15px 0;
+}
+
+div.booklist div.book div.prodimg {
+    float: left;
+    margin-right: 20px;
+}
+
+div.booklist div.book div.prodimg img {
+    width: 100px;
+    height: 150px;
+}
+
+div.booklist div.book a.title_link {
+    font-size: 18px;
+}
+
+div.booklist div.book p.price {
+    float: right;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+h1.title_link {
+    text-align: center;
+}
+
+div.bookview div.book div.prodimg {
+    width: inherit;
+    max-width: inherit;
+}
+
+div.bookview div.book div.prodimg img {
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.price-row {
+    margin: 40px 0;
+}
+
+.buy-buy-buy {
+    float: left;
+    margin-bottom: 40px;
+}
+
+.add-to-cart {
+    float: right;
+    margin-bottom: 40px;
+}
+
+footer p {
+    text-align: center;
+}

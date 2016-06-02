@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+
+    <head>
+        {{template "HEAD"}}
+        <title>Book Store -
+            {{.book.Title}}</title>
+    </head>
+
+    <body>
+        {{template "NAV"}}
+
+        <div class="container-fluid">
+            <h1 class="title_link">{{.book.Title}}</h1>
+
+            <div class="bookview">
+                <div class="book">
+                    <div class="row">
+                        <span class="col-sm-1 col-md-2"></span>
+
+                        <div class="col-xs-12 col-sm-5 col-md-4 prodimg">
+                            <img src="{{.book.Image}}"/>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-5 col-md-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Authors</div>
+                                <div class="panel-body">
+                                    {{range $i, $author := .book.Authors}}
+                                        <p class="author">{{$author.Name}}</p>
+                                    {{end}}
+                                </div>
+                            </div>
+                            <div class="panel panel-default price-row">
+                                <div class="panel-heading">Price</div>
+                                <div class="panel-body">
+                                    <p class="price">￥{{.book.Price}}</p>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-lg btn-warning buy-buy-buy">Buy Buy Buy</button>
+                            <button type="button" class="btn btn-lg btn-warning add-to-cart">
+                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <span class="col-sm-1 col-md-2"></span>
+                        <div class="col-xs-12 col-sm-10 col-md-8">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Synopsis</div>
+                                <div class="panel-body">
+                                    <p class="synopsis">{{.book.Synopsis}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{template "FOOTER"}}
+    </body>
+</html>
